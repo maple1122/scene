@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="sceneTest" parallel="false">
+
+    <test name="直播管理-上线直播管理">
+        <classes>
+            <class name="LiveTest"></class>
+        </classes>
+    </test>
+    <test name="直播管理-待签直播管理">
+        <classes>
+            <class name="SignTest"></class>
+        </classes>
+    </test>
+    <test name="直播管理-广告管理">
+        <classes>
+            <class name="AdTest"></class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+</suite>
