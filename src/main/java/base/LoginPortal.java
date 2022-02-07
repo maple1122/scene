@@ -17,7 +17,7 @@ public class LoginPortal {
 
     //浏览器初始化
     public static WebDriver initDriver() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\tools\\other\\chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
