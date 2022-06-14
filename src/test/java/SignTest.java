@@ -28,10 +28,10 @@ public class SignTest {
         Sign.publish();
     }
 
-    @Test(priority = 10)//删除自动化创建的直播
-    public void testDelScence() throws InterruptedException {
-        Sign.delScence();
-    }
+//    @Test(priority = 10)//删除自动化创建的直播
+//    public void testDelScence() throws InterruptedException {
+//        Sign.delScence();
+//    }
 
     @Test(priority = 3)//互动直播报道添加现场
     public void testAddReportLive() throws InterruptedException {
@@ -43,10 +43,10 @@ public class SignTest {
         Sign.auditReportLive();
     }
 
-    @Test(priority = 7)//互动直播报道删除现场
-    public void testDelReport() throws InterruptedException {
-        Sign.delReportLive();
-    }
+//    @Test(priority = 7)//互动直播报道删除现场
+//    public void testDelReport() throws InterruptedException {
+//        Sign.delReportLive();
+//    }
 
     @Test(priority = 5)//互动直播创建直播间
     public void testAddReportLive2() throws InterruptedException {
@@ -58,10 +58,10 @@ public class SignTest {
         Sign.auditReportLive2();
     }
 
-    @Test(priority = 8)//互动直播互动报道删除直播间
-    public void testDelReport2() throws InterruptedException {
-        Sign.delReportLive2();
-    }
+//    @Test(priority = 8)//互动直播互动报道删除直播间
+//    public void testDelReport2() throws InterruptedException {
+//        Sign.delReportLive2();
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

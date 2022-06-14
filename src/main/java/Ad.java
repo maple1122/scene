@@ -203,32 +203,10 @@ public class Ad extends LoginPortal {
         System.out.println("~~~delAd() 删除成功~~~");
     }
 
-    //初始化登录
-    static {
-        try {
-            driver = login();
-            for (int i = 0; i < 3; i++) {
-                if (!CommonMethod.isJudgingElement(driver,By.tagName("header"))) {
-                    driver.get("http://app.test.pdmiryun.com/scene/ad");
-                    Thread.sleep(2000);
-                }else break;
-            }
-
-            if (!driver.findElement(By.xpath("//div[@class='nav-right']/ul/li/a")).getText().contains("爱富县")) {
-                Actions action = new Actions(driver);
-                action.moveToElement(driver.findElement(By.className("nav-right"))).perform();
-                Thread.sleep(500);
-                driver.findElement(By.linkText("爱富县")).click();
-                Thread.sleep(2000);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     //搜索自动化创建的广告
     public static void searchAuto() throws InterruptedException {
-        driver.get("http://app.test.pdmiryun.com/scene/ad");
+        driver.get(domain+"/scene/ad");
         Thread.sleep(1000);
         driver.findElement(By.name("keyword")).sendKeys("autoTest");
         driver.findElement(By.id("searchBtn")).click();
@@ -247,4 +225,28 @@ public class Ad extends LoginPortal {
         }
         return ads.size();
     }
+
+    //初始化登录
+    static {
+        try {
+            driver = login();
+            for (int i = 0; i < 3; i++) {
+                if (!CommonMethod.isJudgingElement(driver,By.tagName("header"))) {
+                    driver.get(domain+"/scene/ad");
+                    Thread.sleep(2000);
+                }else break;
+            }
+
+            if (!driver.findElement(By.xpath("//div[@class='nav-right']/ul/li/a")).getText().contains(siteName)) {
+                Actions action = new Actions(driver);
+                action.moveToElement(driver.findElement(By.className("nav-right"))).perform();
+                Thread.sleep(500);
+                driver.findElement(By.linkText(siteName)).click();
+                Thread.sleep(2000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

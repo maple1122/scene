@@ -27,10 +27,10 @@ public class AdTest {
         Ad.addLive();
     }
 
-    @Test(priority = 4)//广告删除投入直播
-    public void testDelLive() throws InterruptedException {
-        Ad.delLive();
-    }
+//    @Test(priority = 4)//广告删除投入直播
+//    public void testDelLive() throws InterruptedException {
+//        Ad.delLive();
+//    }
 
     @Test(priority = 5)//开启广告
     public void testOpenAd() throws InterruptedException {
@@ -42,10 +42,10 @@ public class AdTest {
         Ad.closeAd();
     }
 
-    @Test(priority = 7)//删除广告
-    public void testDelAd() throws InterruptedException {
-        Ad.delAd();
-    }
+//    @Test(priority = 7)//删除广告
+//    public void testDelAd() throws InterruptedException {
+//        Ad.delAd();
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

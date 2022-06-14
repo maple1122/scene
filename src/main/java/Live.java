@@ -121,7 +121,7 @@ public class Live extends LoginPortal {
     //搜索自动化创建的直播
     public static void searchAuto() throws InterruptedException {
         //搜索自动化创建的直播
-        driver.get("http://app.test.pdmiryun.com/scene/live");
+        driver.get(domain+"/scene/live");
         Thread.sleep(1000);
         driver.findElement(By.name("keyword")).sendKeys("autoTest");
         driver.findElement(By.id("searchBtn")).click();
@@ -147,15 +147,15 @@ public class Live extends LoginPortal {
             driver = login();
             for (int i = 0; i < 3; i++) {
                 if (!CommonMethod.isJudgingElement(driver,By.tagName("header"))) {
-                    driver.get("http://app.test.pdmiryun.com/scene/live");
+                    driver.get(domain+"/scene/live");
                     Thread.sleep(2000);
                 }else break;
             }
 
-            if (!driver.findElement(By.xpath("//div[@class='nav-right']/ul/li/a")).getText().contains("爱富县")) {
+            if (!driver.findElement(By.xpath("//div[@class='nav-right']/ul/li/a")).getText().contains(siteName)) {
                 Actions action = new Actions(driver);
                 action.moveToElement(driver.findElement(By.className("nav-right"))).perform();
-                driver.findElement(By.linkText("爱富县")).click();
+                driver.findElement(By.linkText(siteName)).click();
             }
             Thread.sleep(1000);
 
